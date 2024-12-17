@@ -1,0 +1,34 @@
+.board-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 20px;
+}
+
+.board-card {
+  flex: 1;
+  flex-direction: column;
+  margin: 10px;
+  padding: 20px;
+
+  background-color: #FFF8E6;
+  border-radius: 10px;
+}
+
+.board-title-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0px 0px 12px 0px;
+  padding: 5px;
+
+ 
+  font-size: 22px;
+  align-items: center;
+  font-weight: 700;
+  color: #eb8317;
+  background-color: #fedbb0;
+
+  border-radius: 10px;
+}
