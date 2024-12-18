@@ -1,40 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Nombre del Proyecto
 
-## Getting Started
+## Descripción
 
-First, run the development server:
+Este proyecto es una aplicación de gestión de tareas donde los usuarios pueden agregar, editar, eliminar y filtrar tareas. Implementa almacenamiento local para persistencia, utiliza React Router para navegación, y maneja el estado con useState y Context API para una gestión eficiente. El diseño es responsivo y limpio, con un enfoque en buenas prácticas de desarrollo en React y Next.js.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tecnologías
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Este proyecto utiliza las siguientes tecnologías:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- **Frontend:**
+  - React
+  - Next.js
+  - Context API
+  - CSS
+  - LocalStorage
+- **Testing:**
+  - Jest
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Instalación
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+Para instalar y ejecutar este proyecto localmente, sigue estos pasos:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Clona el repositorio:
 
-## Learn More
+   ```bash
+   git clone https://github.com/alePapaluca30/challenge-toDoList.git
 
-To learn more about Next.js, take a look at the following resources:
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+2. Navega al directorio del proyecto:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   cd challenge-toDoList
 
-## Deploy on Vercel
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Instala las dependencias:
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+4. Ejecuta el proyecto en modo desarrollo:
+   ```bash
+   npm run dev
+   ```
+5. Una vez que el proyecto esté en ejecución, dirígete a http://localhost:3000/taskBoard para ver la aplicación en acción.
