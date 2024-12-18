@@ -20,9 +20,6 @@ const PageHeader = ({ actions }: PageHeaderProps) => {
       }}
     >
       PageHeader
-      {actions?.map((action) => (
-        <Button label={action.label} />
-      ))}
     </div>
   );
 };

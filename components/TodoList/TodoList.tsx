@@ -12,16 +12,10 @@ const TodoListContainer = () => {
   };
 
   const handleSaveNewTask = (taskDetails: any) => {
-    console.log(taskDetails);
-    
     addTask({
       ...taskDetails,
     });
 
-    setNewTaskEnabled(false);
-  };
-
-  const handleCancelNewTask = () => {
     setNewTaskEnabled(false);
   };
 

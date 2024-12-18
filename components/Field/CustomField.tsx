@@ -1,9 +1,11 @@
 import React from "react";
 import Button from "../Button/Button";
 import { EditableFieldProps } from "@/types/Field";
+import { typeField } from "@/constants/tasks";
 
 const CustomField: React.FC<EditableFieldProps> = ({
   field,
+  type,
   label,
   value,
   placeholder,
@@ -17,14 +19,24 @@ const CustomField: React.FC<EditableFieldProps> = ({
 }) => {
   return isEditing ? (
     <div className="task-container">
-      <input
-        type="text"
-        value={editValue}
-        onChange={(e) => onValueChange(e.target.value)}
-        onKeyDown={onKeyDown}
-        placeholder={placeholder}
-        autoFocus
-      />
+      {type === typeField.text ? (
+        <input
+          type="text"
+          value={editValue}
+          onChange={(e) => onValueChange(e.target.value)}
+          onKeyDown={onKeyDown}
+          placeholder={placeholder}
+          autoFocus
+        />
+      ) : (
+        <textarea
+          value={editValue}
+          onChange={(e) => onValueChange(e.target.value)}
+          placeholder={placeholder}
+          autoFocus
+        />
+      )}
+
       <div className="actions-container">
         <Button
           onClick={onSave}

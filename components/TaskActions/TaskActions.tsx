@@ -14,7 +14,8 @@ const TaskActions: React.FC<TaskActionsProps> = ({ state, onStateChange }) => {
   };
 
   const handleMoveBackward = () => {
-    if (!onStateChange) return; // Verificar si la función está definida
+    if (!onStateChange) return;
+    
     const prevIndex = states.indexOf(state) - 1;
     if (prevIndex >= 0) {
       onStateChange(states[prevIndex] as "to-do" | "doing" | "done");
@@ -24,7 +25,10 @@ const TaskActions: React.FC<TaskActionsProps> = ({ state, onStateChange }) => {
   return (
     <div className="actions-container">
       {state !== "to-do" && (
-        <Button icon={<span className="material-icons">chevron_left</span>} onClick={handleMoveBackward} />
+        <Button
+          icon={<span className="material-icons">chevron_left</span>}
+          onClick={handleMoveBackward}
+        />
       )}
       {state !== "done" && (
         <Button

@@ -1,4 +1,8 @@
 .custom-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   --color: #eb8317;
   background-color: inherit;
   padding: 0.7em;
