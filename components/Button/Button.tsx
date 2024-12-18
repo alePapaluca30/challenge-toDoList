@@ -6,7 +6,8 @@ const Button = ({
   ...props
 }: {
   label: string;
-  icon: ReactNode;
+  icon?: ReactNode;
+  onClick: () => void;
 }) => {
   return (
     <button className="custom-button" {...props}>

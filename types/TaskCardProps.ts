@@ -6,13 +6,12 @@ export type Task = {
 };
 
 export interface TaskCardProps {
-  id: number;
+  id?: string;
   title: string;
   description: string;
   state: "to-do" | "doing" | "done"; 
   onStateChange: (newState: "to-do" | "doing" | "done") => void;
   onUpdateTask: (task: {
-    id: number;
     title?: string;
     description?: string;
     state?: "to-do" | "doing" | "done";

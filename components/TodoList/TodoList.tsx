@@ -2,23 +2,27 @@ import React, { useState } from "react";
 import TaskCard from "../TaskCard/TaskCard";
 import { useTasks } from "@/provider/TasksContext";
 import { columnConfig } from "@/constants/tasks";
-import NewTaskForm from "../CreateTask/CreateTask";
 
 const TodoListContainer = () => {
   const { tasks, updateTaskState, updateTaskDetails, addTask } = useTasks();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [newTaskEnabled, setNewTaskEnabled] = useState(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
+  const handleEnableNewTask = () => {
+    setNewTaskEnabled(true);
   };
 
-  const closeModal = (): void => {
-    setIsModalOpen(false);
+  const handleSaveNewTask = (taskDetails: any) => {
+    console.log(taskDetails);
+    
+    addTask({
+      ...taskDetails,
+    });
+
+    setNewTaskEnabled(false);
   };
 
-  const handleCreateTask = (newTask: any) => {
-    addTask(newTask);
-    closeModal();
+  const handleCancelNewTask = () => {
+    setNewTaskEnabled(false);
   };
 
   return (
@@ -26,7 +30,29 @@ const TodoListContainer = () => {
       {columnConfig.map((column) => (
         <div key={column.state} className="board-card">
           <h3 className="board-title-card">{column.title}</h3>
+
+          {/* Add Task */}
+          {column.state === "to-do" && (
+            <button onClick={handleEnableNewTask} className="add-task">
+              + Nueva Tarea
+            </button>
+          )}
+
           <div style={{ display: "flex", flexDirection: "column", rowGap: 20 }}>
+            {/* Card add task */}
+            {newTaskEnabled && column.state === "to-do" && (
+              <TaskCard
+                title=""
+                description=""
+                state="to-do"
+                onStateChange={() => {}}
+                onUpdateTask={(newTaskDetails) =>
+                  handleSaveNewTask(newTaskDetails)
+                }
+              />
+            )}
+
+            {/* Task list */}
             {tasks
               .filter((task) => task.state === column.state)
               .map((task) => (
@@ -51,28 +77,6 @@ const TodoListContainer = () => {
           </div>
         </div>
       ))}
-
-      {/* Modal */}
-      {isModalOpen && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: "red",
-          }}
-        >
-          <div className="bg-white p-6 rounded-md shadow-md w-96 z-60">
-            <h2 className="text-xl font-semibold mb-4">Crear Nueva Tarea</h2>
-            <NewTaskForm
-              closeModal={closeModal}
-              onCreateTask={handleCreateTask}
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 };

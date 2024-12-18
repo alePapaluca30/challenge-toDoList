@@ -5,7 +5,6 @@
   margin: 10px;
   padding: 20px;
 }
-
 .board-card {
   flex: 1;
   flex-direction: column;
@@ -31,4 +30,21 @@
   background-color: #fedbb0;
 
   border-radius: 10px;
+}
+
+.add-task{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 2px 5px 10px 0;
+
+  font-weight: 600;
+  font-size: 20px;
+  
+
+  color: #eb8317;
+  background-color: transparent;
+  border: none;
+
+  text-decoration: underline;
 }

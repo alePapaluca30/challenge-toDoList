@@ -20,13 +20,16 @@
 .actions-container {
   display: flex;
   justify-content: space-between;
+
+  color: black;
 }
 
 .actions-container input {
-  padding: 0 1rem;
+  padding: 0.8rem;
+  width: 100%;
   color: #fff;
   font-size: 15px;
-  border: 1px solid #2327ff;
+  border: 1px solid rgb(75 85 99);
   border-radius: 6px;
   background-color: transparent;
 }
