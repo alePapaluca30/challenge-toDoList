@@ -1,5 +1,7 @@
 # Nombre del Proyecto
 
+Challenge Front End - React
+
 ## Descripción
 
 Este proyecto es una aplicación de gestión de tareas donde los usuarios pueden agregar, editar, eliminar y filtrar tareas. Implementa almacenamiento local para persistencia, utiliza React Router para navegación, y maneja el estado con useState y Context API para una gestión eficiente. El diseño es responsivo y limpio, con un enfoque en buenas prácticas de desarrollo en React y Next.js.
