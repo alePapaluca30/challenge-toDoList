@@ -1,4 +1,4 @@
-import { Task, TasksContextType } from "@/types/TaskActions";
+import { Filters, Task, TasksContextType } from "@/types/TaskActions";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -13,14 +13,12 @@ export const useTasks = () => {
 
 export const TasksProvider = ({ children }: { children: React.ReactNode }) => {
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [filteredTasks, setFilteredTasks] = useState<Task[]>([]);
 
   useEffect(() => {
     const savedTasks = localStorage.getItem("tasks");
     if (savedTasks) {
       const parsedTasks = JSON.parse(savedTasks);
       setTasks(JSON.parse(savedTasks));
-      setFilteredTasks(parsedTasks);
     }
   }, []);
 
@@ -59,21 +57,19 @@ export const TasksProvider = ({ children }: { children: React.ReactNode }) => {
     });
   };
 
-  const getFilteredTasks = (filters: {
-    completed: boolean;
-    incomplete: boolean;
-    all: boolean;
-  }): Task[] => {
-
+  const getFilteredTasks = (filters: Filters): Task[] => {
     if (filters.all) return tasks;
 
-    return tasks.filter((task) => {
+    return tasks.filter((task: any) => {
       if (filters.completed && task.state === "done") return true;
-      if (filters.incomplete && task.state !== "done") return true;
+      if (
+        filters.incomplete &&
+        (task.state === "doing" || task.state === "to-do")
+      )
+        return true;
       return false;
     });
   };
-
   return (
     <TasksContext.Provider
       value={{

@@ -4,11 +4,26 @@ export interface TaskActionsProps {
 }
 
 //PROPS PROVIDERS
+export type Filters = {
+  completed: boolean;
+  incomplete: boolean;
+  all: boolean;
+};
+
 export type Task = {
   id: string;
   title: string;
   description: string;
   state: "to-do" | "doing" | "done";
+};
+
+export type FilterOptions = {
+  completed: boolean;
+  incomplete: boolean;
+  all: boolean;
+};
+export type TaskFilterProps = {
+  onFilterChange: (filters: FilterOptions) => void;
 };
 
 export type TasksContextType = {
@@ -17,9 +32,5 @@ export type TasksContextType = {
   updateTaskDetails: (id: string, updates: Partial<Task>) => void;
   addTask: (newTask: Task) => void;
   deleteTask: (id: string) => void;
-  getFilteredTasks: (filters: {
-    completed: boolean;
-    incomplete: boolean;
-    all: boolean;
-  }) => void;
+  getFilteredTasks: (filters: FilterOptions) => Task[];
 };

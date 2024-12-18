@@ -1,12 +1,11 @@
 import React from "react";
-import TodoList from "@/components/TodoList/TodoList";
 import PageHeader from "@/components/PageHeader/PageHeader";
+import TaskBoard from "@/components/TodoList/TodoList";
 
 const TodoListPage = () => {
   return (
     <div>
-      <PageHeader />
-      <TodoList />
+      <TaskBoard />
     </div>
   );
 };

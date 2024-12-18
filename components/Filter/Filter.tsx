@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import Button from "../Button/Button";
-import { useTasks } from "@/provider/TasksContext";
+import { TaskFilterProps } from "@/types/TaskActions";
 
-const TaskFilter = () => {
-  const { getFilteredTasks } = useTasks();
+const TaskFilter: React.FC<TaskFilterProps> = ({ onFilterChange }) => {
   const [filters, setFilters] = useState({
     completed: false,
     incomplete: false,
@@ -12,7 +10,7 @@ const TaskFilter = () => {
   });
 
   useEffect(() => {
-    getFilteredTasks(filters);
+    onFilterChange(filters);
   }, [filters]);
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,8 +21,6 @@ const TaskFilter = () => {
       all: name === "all" ? checked : false,
     }));
   };
-
-  const filteredTasks = getFilteredTasks(filters);
 
   return (
     <div className="dropdown">
