@@ -1,5 +1,5 @@
 .task-card {
-  padding: 1rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   margin: 1rem 0 1rem 0;
   width: 100%;
   background-color: #fff;
@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 0 0.7rem 0 0.7rem;
   gap: 8px;
   width: 100%;
 }
@@ -18,7 +19,7 @@
 .task-container textarea {
   width: 100%;
   margin: 0.1rem 0 0.1rem 0;
-  padding-left: 0.5rem;
+  margin: 0.3rem 0 0.3rem 0;
   height: 3rem;
   max-width: 18rem;
 
@@ -39,6 +40,7 @@
 }
 
 .task-container-input-value {
+  padding: 0.3rem 0 0.3rem 0;
   color: black;
   font-size: 18px;
   font-weight: 600;
@@ -58,46 +60,57 @@
 .actions-container {
   display: flex;
   justify-content: space-between;
-  padding: 0.2rem 0 0 0;
+  padding: 0.5rem 0.2rem 0 0.2rem;
   color: black;
 }
 
 .actions-container input {
   padding: 0.8rem;
   width: 100%;
+  margin: 10rem;
   font-size: 15px;
   border: 1px solid rgb(75 85 99);
   border-radius: 10px;
   background-color: transparent;
 }
 
+.input-label-value {
+  display: flex;
+  flex-direction: column;
+  color: rgb(75 85 99);
+  font-weight: 500;
+  font-size: 18px;
+}
 .container-delete {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 .actions-delete {
-  width: 30%;
+  width: 25%;
   background-color: transparent;
   padding: 0.5rem;
 
   font-size: 16px;
   font-weight: 600;
   border: 2px solid red;
-  color: red;
+  color: white;
+  background-color: red;
   border-radius: 10px;
 
   transition: background-color 0.3s ease;
 }
 
 .actions-delete:hover {
+  color: red;
   background-color: rgba(255, 0, 0, 0.4);
+  border: 2px solid rgba(255, 0, 0, 0.4);
+  border-radius: 10px;
 }
 
 .separator {
   cursor: pointer;
-  margin: 0.8rem 0 0.8rem 0;
-  padding: 0.5rem 0 0.5rem 0;
+  margin: 0.8rem;
   border-bottom: 1px dashed rgb(204, 204, 204);
 }
 

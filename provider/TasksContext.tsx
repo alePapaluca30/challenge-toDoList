@@ -45,7 +45,7 @@ export const TasksProvider = ({ children }: { children: React.ReactNode }) => {
 
   const addTask = (newTask: Task) => {
     const taskWithId: Task = { ...newTask, id: uuidv4(), state: "to-do" };
-    setTasks((prevTasks) => [...prevTasks, taskWithId]);
+    setTasks((prevTasks) => [taskWithId, ...prevTasks]);
   };
 
   const deleteTask = (taskId: string) => {

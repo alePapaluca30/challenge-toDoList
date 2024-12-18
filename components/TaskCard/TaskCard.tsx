@@ -101,15 +101,8 @@ const TaskCard = ({
       />
 
       {/* Btn change state */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-        }}
-      >
-        <TaskActions state={state} onStateChange={onStateChange} />
-      </div>
+
+      <TaskActions state={state} onStateChange={onStateChange} />
     </div>
   );
 };
