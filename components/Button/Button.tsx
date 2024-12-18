@@ -3,14 +3,16 @@ import React, { ReactNode } from "react";
 const Button = ({
   label,
   icon,
+  classname = "custom-button",
   ...props
 }: {
-  label: string;
+  classname?: string;
+  label?: string;
   icon?: ReactNode;
   onClick: () => void;
 }) => {
   return (
-    <button className="custom-button" {...props}>
+    <button className={classname} {...props}>
       {icon}
       {label}
     </button>

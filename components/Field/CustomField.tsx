@@ -15,7 +15,7 @@ const CustomField: React.FC<EditableFieldProps> = ({
   onKeyDown,
 }) => {
   return isEditing ? (
-    <div style={{ display: "flex", gap: "8px" }}>
+    <div className="task-container">
       <input
         type="text"
         value={editValue}
@@ -24,18 +24,24 @@ const CustomField: React.FC<EditableFieldProps> = ({
         placeholder={placeholder}
         autoFocus
       />
-      <Button onClick={onSave} label="Guardar" />
-      <Button onClick={onCancel} label="Cancelar" />
+      <div className="actions-container">
+        <Button
+          onClick={onSave}
+          icon={<span className="material-icons">save</span>}
+          classname="custom-button-action"
+        />
+        <Button
+          onClick={onCancel}
+          icon={<span className="material-icons">close</span>}
+          classname="custom-button-action"
+        />
+      </div>
     </div>
   ) : (
     <div
       onClick={onEdit}
-      style={{
-        cursor: "pointer",
-        padding: "4px",
-        borderBottom: "1px dashed #ccc",
-      }}
       tabIndex={0}
+      className="separator"
       aria-label={`Editar ${field}`}
     >
       {value || placeholder}

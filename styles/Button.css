@@ -8,10 +8,30 @@
   color: var(--color);
   border: 2px solid var(--color);
   border-radius: 10px;
+}
+
+.custom-button-action {
+  --color: #eb8317;
+  padding: 0.7em;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color);
+  background-color: transparent;
+  border: none;
 
 }
 
 .custom-button:hover {
   color: #fff;
   background-color: var(--color);
+}
+
+
+.custom-button-action:hover {
+  --color: rgb(245, 243, 243);
+  color: #eb8317;
+  background-color: var(--color);
+  border-radius: 10px;
+
+  font-weight: 700;
 }

@@ -1,8 +1,28 @@
 .task-card {
   padding: 1rem;
+  margin: 1rem 0 2rem 0;
+  width: 100%;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.15);
+}
+.task-container {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.task-container input {
+  width: 100%;
+  margin: 0.2rem 0 0.2rem 0;
+  padding-left: 0.5rem;
+
+  --color: #eb8317;
+  background-color: transparent;
+  border: 2px solid var(--color);
+  border-radius: 10px;
+  color: black;
+  font-size: 16px;
 }
 
 .title {
@@ -20,18 +40,24 @@
 .actions-container {
   display: flex;
   justify-content: space-between;
-
+  padding: 1rem 0 1rem 0;
   color: black;
 }
 
 .actions-container input {
   padding: 0.8rem;
   width: 100%;
-  color: #fff;
   font-size: 15px;
   border: 1px solid rgb(75 85 99);
   border-radius: 6px;
   background-color: transparent;
+}
+
+.separator {
+  cursor: pointer;
+  margin: 0.8rem 0 0.8rem 0;
+  padding: 0.5rem 0 0.5rem 0;
+  border-bottom: 1px dashed rgb(204, 204, 204);
 }
 
 .actions {
