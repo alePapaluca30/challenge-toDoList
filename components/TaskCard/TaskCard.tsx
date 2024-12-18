@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { TaskCardProps } from "@/types/TaskCardProps";
 import TaskActions from "../TaskActions/TaskActions";
 import CustomField from "../Field/CustomField";
+import Button from "../Button/Button";
 
 const TaskCard = ({
   id,
@@ -10,6 +11,7 @@ const TaskCard = ({
   state,
   onStateChange,
   onUpdateTask,
+  onDeleteTask,
 }: TaskCardProps) => {
   const [localTask, setLocalTask] = useState({
     title: initialTitle || "",
@@ -61,8 +63,16 @@ const TaskCard = ({
 
   return (
     <div className="task-card">
+      <div className="container-delete">
+        <Button
+          onClick={() => onDeleteTask()}
+          label="Eliminar"
+          classname="actions-delete"
+        />
+      </div>
       <CustomField
         field="title"
+        type="text"
         label="Título"
         value={localTask.title}
         placeholder="Haz clic para agregar un título"
@@ -77,6 +87,7 @@ const TaskCard = ({
 
       <CustomField
         field="description"
+        type="area"
         label="Descripción"
         value={localTask.description}
         placeholder="Haz clic para agregar una descripción"
@@ -90,7 +101,15 @@ const TaskCard = ({
       />
 
       {/* Btn change state */}
-      <TaskActions state={state} onStateChange={onStateChange} />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+        }}
+      >
+        <TaskActions state={state} onStateChange={onStateChange} />
+      </div>
     </div>
   );
 };

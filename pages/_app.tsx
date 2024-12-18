@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import "@/styles/TaskBoard.css";
 import "@/styles/TaskCard.css";
 import "@/styles/Button.css";
+import "@/styles/MenuDesplegable.css";
 import 'material-icons/iconfont/material-icons.css';
 import type { AppProps } from "next/app";
 

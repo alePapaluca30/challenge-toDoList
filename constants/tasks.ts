@@ -8,7 +8,7 @@ export const columnConfig = [
 
 export const initialTask: TaskCardProps[] = [
   {
-    id: 1,
+    id: "1",
     title: "Mi Titulo",
     description: "descripcion 1",
     state: "doing",
@@ -16,7 +16,7 @@ export const initialTask: TaskCardProps[] = [
     onUpdateTask: () => {},
   },
   {
-    id: 2,
+    id: "2",
     title: "Mi Titulo",
     description: "descripcion 2",
     state: "to-do",
@@ -24,6 +24,8 @@ export const initialTask: TaskCardProps[] = [
     onUpdateTask: () => {},
   },
 ];
+
+export const typeField = { text: "text", textarea: "textarea" };
 
 export const states = ["to-do", "doing", "done"];
 

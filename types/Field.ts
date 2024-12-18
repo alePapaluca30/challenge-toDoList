@@ -1,5 +1,6 @@
 export interface EditableFieldProps {
   field: "title" | "description";
+  type?: string;
   label: string;
   value: string | null;
   placeholder: string;

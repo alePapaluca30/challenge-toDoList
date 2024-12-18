@@ -1,19 +1,11 @@
 import React from "react";
-import TodoList from "@/components/TodoList/TodoList";
 import PageHeader from "@/components/PageHeader/PageHeader";
-
-const actions = [
-  {
-    label: "Agregar tarea",
-    action: () => console.log("asd"),
-  },
-];
+import TaskBoard from "@/components/TodoList/TodoList";
 
 const TodoListPage = () => {
   return (
     <div>
-      <PageHeader actions={actions} />
-      <TodoList />
+      <TaskBoard />
     </div>
   );
 };

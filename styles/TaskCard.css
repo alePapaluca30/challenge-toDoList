@@ -1,6 +1,6 @@
 .task-card {
   padding: 1rem;
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 0 1rem 0;
   width: 100%;
   background-color: #fff;
   border-radius: 10px;
@@ -8,21 +8,28 @@
 }
 .task-container {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 8px;
   width: 100%;
 }
 
-.task-container input {
+.task-container input,
+.task-container textarea {
   width: 100%;
-  margin: 0.2rem 0 0.2rem 0;
+  margin: 0.1rem 0 0.1rem 0;
   padding-left: 0.5rem;
+  height: 3rem;
+  max-width: 18rem;
+
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
 
   --color: #eb8317;
   background-color: transparent;
   border: 2px solid var(--color);
   border-radius: 10px;
-  color: black;
-  font-size: 16px;
 }
 
 .task-container-input-label {
@@ -51,7 +58,7 @@
 .actions-container {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0 1rem 0;
+  padding: 0.2rem 0 0 0;
   color: black;
 }
 
@@ -60,8 +67,31 @@
   width: 100%;
   font-size: 15px;
   border: 1px solid rgb(75 85 99);
-  border-radius: 6px;
+  border-radius: 10px;
   background-color: transparent;
+}
+
+.container-delete {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.actions-delete {
+  width: 30%;
+  background-color: transparent;
+  padding: 0.5rem;
+
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid red;
+  color: red;
+  border-radius: 10px;
+
+  transition: background-color 0.3s ease;
+}
+
+.actions-delete:hover {
+  background-color: rgba(255, 0, 0, 0.4);
 }
 
 .separator {
