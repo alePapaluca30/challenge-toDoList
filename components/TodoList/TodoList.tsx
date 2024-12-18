@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import TaskCard from "../TaskCard/TaskCard";
 import { useTasks } from "@/provider/TasksContext";
 import { columnConfig } from "@/constants/tasks";
+import Button from "../Button/Button";
+import TaskFilter from "../Filter/Filter";
 
 const TodoListContainer = () => {
-  const { tasks, updateTaskState, updateTaskDetails, addTask } = useTasks();
+  const { tasks, updateTaskState, updateTaskDetails, addTask, deleteTask } =
+    useTasks();
   const [newTaskEnabled, setNewTaskEnabled] = useState(false);
 
   const handleEnableNewTask = () => {
@@ -21,15 +24,20 @@ const TodoListContainer = () => {
 
   return (
     <div className="board-container">
+      <TaskFilter />
       {columnConfig.map((column) => (
         <div key={column.state} className="board-card">
           <h3 className="board-title-card">{column.title}</h3>
 
           {/* Add Task */}
           {column.state === "to-do" && (
-            <button onClick={handleEnableNewTask} className="add-task">
-              + Nueva Tarea
-            </button>
+            <div className="container-delete">
+              <Button
+                onClick={handleEnableNewTask}
+                label=" + Nueva Tarea"
+                classname="add-task"
+              />
+            </div>
           )}
 
           <div style={{ display: "flex", flexDirection: "column", rowGap: 20 }}>
@@ -43,6 +51,7 @@ const TodoListContainer = () => {
                 onUpdateTask={(newTaskDetails) =>
                   handleSaveNewTask(newTaskDetails)
                 }
+                onDeleteTask={() => deleteTask("")}
               />
             )}
 
@@ -66,6 +75,7 @@ const TodoListContainer = () => {
                       state: updatedTask.state,
                     })
                   }
+                  onDeleteTask={() => deleteTask(task.id)}
                 />
               ))}
           </div>

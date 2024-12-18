@@ -16,4 +16,5 @@ export interface TaskCardProps {
     description?: string;
     state?: "to-do" | "doing" | "done";
   }) => void;
+  onDeleteTask: () => void;
 }

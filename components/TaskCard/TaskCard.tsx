@@ -11,6 +11,7 @@ const TaskCard = ({
   state,
   onStateChange,
   onUpdateTask,
+  onDeleteTask,
 }: TaskCardProps) => {
   const [localTask, setLocalTask] = useState({
     title: initialTitle || "",
@@ -64,7 +65,7 @@ const TaskCard = ({
     <div className="task-card">
       <div className="container-delete">
         <Button
-          onClick={handleSave}
+          onClick={() => onDeleteTask()}
           label="Eliminar"
           classname="actions-delete"
         />

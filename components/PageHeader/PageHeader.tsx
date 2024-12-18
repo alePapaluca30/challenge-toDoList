@@ -1,16 +1,8 @@
 import React from "react";
-import Button from "../Button/Button";
+import TaskFilter from "../Filter/Filter";
+import Link from "next/link";
 
-type Actions = {
-  label: string;
-  action: () => void;
-};
-
-type PageHeaderProps = {
-  actions?: Actions[];
-};
-
-const PageHeader = ({ actions }: PageHeaderProps) => {
+const PageHeader = () => {
   return (
     <div
       style={{
@@ -19,7 +11,8 @@ const PageHeader = ({ actions }: PageHeaderProps) => {
         alignItems: "center",
       }}
     >
-      PageHeader
+      <Link href="/about">Aceca de la aplicacion</Link>
+
     </div>
   );
 };

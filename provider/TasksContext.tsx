@@ -1,19 +1,6 @@
+import { Task, TasksContextType } from "@/types/TaskActions";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-
-type Task = {
-  id: string;
-  title: string;
-  description: string;
-  state: "to-do" | "doing" | "done";
-};
-
-type TasksContextType = {
-  tasks: Task[];
-  updateTaskState: (id: string, newState: "to-do" | "doing" | "done") => void;
-  updateTaskDetails: (id: string, updates: Partial<Task>) => void;
-  addTask: (newTask: Task) => void;
-};
 
 const TasksContext = createContext<TasksContextType | undefined>(undefined);
 
@@ -26,11 +13,15 @@ export const useTasks = () => {
 
 export const TasksProvider = ({ children }: { children: React.ReactNode }) => {
   const [tasks, setTasks] = useState<Task[]>([]);
+  const [filteredTasks, setFilteredTasks] = useState<Task[]>([]);
 
   useEffect(() => {
     const savedTasks = localStorage.getItem("tasks");
-    if (savedTasks) setTasks(JSON.parse(savedTasks));
-    // else setTasks(initialTask);
+    if (savedTasks) {
+      const parsedTasks = JSON.parse(savedTasks);
+      setTasks(JSON.parse(savedTasks));
+      setFilteredTasks(parsedTasks);
+    }
   }, []);
 
   useEffect(() => {
@@ -59,9 +50,40 @@ export const TasksProvider = ({ children }: { children: React.ReactNode }) => {
     setTasks((prevTasks) => [...prevTasks, taskWithId]);
   };
 
+  const deleteTask = (taskId: string) => {
+    setTasks((prevTasks) => {
+      const updatedTasks = prevTasks.filter((task) => task.id !== taskId);
+
+      localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+      return updatedTasks;
+    });
+  };
+
+  const getFilteredTasks = (filters: {
+    completed: boolean;
+    incomplete: boolean;
+    all: boolean;
+  }): Task[] => {
+
+    if (filters.all) return tasks;
+
+    return tasks.filter((task) => {
+      if (filters.completed && task.state === "done") return true;
+      if (filters.incomplete && task.state !== "done") return true;
+      return false;
+    });
+  };
+
   return (
     <TasksContext.Provider
-      value={{ tasks, updateTaskState, updateTaskDetails, addTask }}
+      value={{
+        tasks,
+        updateTaskState,
+        updateTaskDetails,
+        addTask,
+        deleteTask,
+        getFilteredTasks,
+      }}
     >
       {children}
     </TasksContext.Provider>
