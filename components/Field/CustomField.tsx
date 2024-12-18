@@ -4,6 +4,7 @@ import { EditableFieldProps } from "@/types/Field";
 
 const CustomField: React.FC<EditableFieldProps> = ({
   field,
+  label,
   value,
   placeholder,
   isEditing,
@@ -44,7 +45,10 @@ const CustomField: React.FC<EditableFieldProps> = ({
       className="separator"
       aria-label={`Editar ${field}`}
     >
-      {value || placeholder}
+      <span className="task-container-input-label">
+        {label}:
+        <p className="task-container-input-value"> {value ?? placeholder}</p>
+      </span>
     </div>
   );
 };

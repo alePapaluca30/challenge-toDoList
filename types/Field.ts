@@ -1,5 +1,6 @@
 export interface EditableFieldProps {
   field: "title" | "description";
+  label: string;
   value: string | null;
   placeholder: string;
   isEditing: boolean;

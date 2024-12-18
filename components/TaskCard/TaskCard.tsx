@@ -16,7 +16,9 @@ const TaskCard = ({
     description: initialDescription || "",
   });
 
-  const [editingField, setEditingField] = useState<"title" | "description" | null>(null);
+  const [editingField, setEditingField] = useState<
+    "title" | "description" | null
+  >(null);
 
   const handleEdit = (field: "title" | "description") => {
     setEditingField(field);
@@ -61,6 +63,7 @@ const TaskCard = ({
     <div className="task-card">
       <CustomField
         field="title"
+        label="Título"
         value={localTask.title}
         placeholder="Haz clic para agregar un título"
         isEditing={editingField === "title"}
@@ -74,6 +77,7 @@ const TaskCard = ({
 
       <CustomField
         field="description"
+        label="Descripción"
         value={localTask.description}
         placeholder="Haz clic para agregar una descripción"
         isEditing={editingField === "description"}
