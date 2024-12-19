@@ -1,5 +1,5 @@
 import React from "react";
-import TaskBoard from "@/components/TodoList/TodoList";
+import TaskBoard from "@/components/TaskBoard/TaskBoard";
 
 const TodoListPage = () => {
   return <TaskBoard />;

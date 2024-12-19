@@ -4,6 +4,7 @@ import "@/styles/TaskBoard.css";
 import "@/styles/TaskCard.css";
 import "@/styles/Button.css";
 import "@/styles/MenuDesplegable.css";
+import "@/styles/About.css";
 import 'material-icons/iconfont/material-icons.css';
 import type { AppProps } from "next/app";
 
