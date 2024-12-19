@@ -1,5 +1,4 @@
 import React from "react";
-import TaskFilter from "../Filter/Filter";
 import Link from "next/link";
 
 const PageHeader = () => {
@@ -12,7 +11,6 @@ const PageHeader = () => {
       }}
     >
       <Link href="/about">Aceca de la aplicacion</Link>
-
     </div>
   );
 };

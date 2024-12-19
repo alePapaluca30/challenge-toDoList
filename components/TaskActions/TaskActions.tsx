@@ -1,7 +1,6 @@
 import React from "react";
 import { states } from "@/constants/tasks";
 import { TaskActionsProps } from "@/types/TaskActions";
-import Button from "../Button/Button";
 
 const TaskActions: React.FC<TaskActionsProps> = ({ state, onStateChange }) => {
   const handleMoveForward = () => {

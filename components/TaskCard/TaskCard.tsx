@@ -5,7 +5,6 @@ import CustomField from "../Field/CustomField";
 import Button from "../Button/Button";
 
 const TaskCard = ({
-  id,
   title: initialTitle,
   description: initialDescription,
   state,

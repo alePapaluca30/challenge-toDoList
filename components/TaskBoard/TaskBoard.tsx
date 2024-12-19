@@ -76,7 +76,6 @@ const TaskBoard = () => {
                 .map((task) => (
                   <TaskCard
                     key={task.id}
-                    id={task.id}
                     title={task.title}
                     description={task.description}
                     state={task.state}

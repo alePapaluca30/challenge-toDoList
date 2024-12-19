@@ -6,7 +6,6 @@ export type Task = {
 };
 
 export interface TaskCardProps {
-  id?: string;
   title: string;
   description: string;
   state: "to-do" | "doing" | "done"; 

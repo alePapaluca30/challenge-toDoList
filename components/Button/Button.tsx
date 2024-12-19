@@ -14,7 +14,7 @@ const Button = ({
   return (
     <button className={classname} {...props}>
       {icon}
-      <p>{label}</p>
+      {label}
     </button>
   );
 };

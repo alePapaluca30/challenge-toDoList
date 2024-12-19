@@ -57,10 +57,10 @@ const CustomField: React.FC<EditableFieldProps> = ({
       className="separator"
       aria-label={`Editar ${field}`}
     >
-      <p className="input-label-value">
+      <div className="input-label-value">
         {label}:
-        <p className="task-container-input-value"> {value ?? placeholder}</p>
-      </p>
+        <div className="task-container-input-value"> {value ?? placeholder}</div>
+      </div>
     </div>
   );
 };
