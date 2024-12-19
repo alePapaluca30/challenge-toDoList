@@ -23,43 +23,56 @@ const TaskFilter: React.FC<TaskFilterProps> = ({ onFilterChange }) => {
   };
 
   return (
-    <div className="dropdown">
-      <Button
-        onClick={() => {}}
-        label="Filtros"
-        icon={<span className="material-icons">filter_alt</span>}
-      />
+    <div className="container-filter">
+      <div className="dropdown">
+        <Button
+          onClick={() => {}}
+          label="Filtros"
+          icon={<span className="material-icons">filter_alt</span>}
+        />
 
-      <div className="dropdown-content">
-        <label className="dropdown-item">
-          <input
-            type="checkbox"
-            name="completed"
-            checked={filters.completed}
-            onChange={handleCheckboxChange}
-            disabled={filters.all}
-          />
-          Completas
-        </label>
-        <label className="dropdown-item">
-          <input
-            type="checkbox"
-            name="incomplete"
-            checked={filters.incomplete}
-            onChange={handleCheckboxChange}
-          />
-          Incompletas
-        </label>
-        <label className="dropdown-item">
-          <input
-            type="checkbox"
-            name="all"
-            checked={filters.all}
-            onChange={handleCheckboxChange}
-          />
-          Todas
-        </label>
+        <div className="dropdown-content">
+          <label className="dropdown-item">
+            <input
+              type="checkbox"
+              name="completed"
+              checked={filters.completed}
+              onChange={handleCheckboxChange}
+            />
+            Completas
+          </label>
+          <label className="dropdown-item">
+            <input
+              type="checkbox"
+              name="incomplete"
+              checked={filters.incomplete}
+              onChange={handleCheckboxChange}
+            />
+            Incompletas
+          </label>
+          <label className="dropdown-item">
+            <input
+              type="checkbox"
+              name="all"
+              checked={filters.all}
+              onChange={handleCheckboxChange}
+            />
+            Todas
+          </label>
+        </div>
       </div>
+      {/* Btn clean filter*/}
+      <Button
+        onClick={() =>
+          setFilters({
+            completed: false,
+            incomplete: false,
+            all: true,
+          })
+        }
+        label="Limpiar Filtros"
+        icon={<span className="material-icons">cleaning_services</span>}
+      />
     </div>
   );
 };

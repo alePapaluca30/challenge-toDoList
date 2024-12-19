@@ -38,12 +38,16 @@ const TaskBoard = () => {
   return (
     <div className="container">
       <div className="container-filter">
+        {/* About */}
         <Link href="/about" className="custom-link">
           <div className="custom-link-title">
             📖 🛠️ Explora sobre nuestras herramientas
           </div>
         </Link>
-        <TaskFilter onFilterChange={(newFilters) => setFilters(newFilters)} />
+        {/* Filter */}
+        <div className="container-filter">
+          <TaskFilter onFilterChange={(newFilters) => setFilters(newFilters)} />
+        </div>
       </div>
       <div className="board-container">
         {columnConfig.map((column) => (
