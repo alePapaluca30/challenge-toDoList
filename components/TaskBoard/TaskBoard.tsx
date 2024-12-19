@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import TaskCard from "../TaskCard/TaskCard";
 import { useTasks } from "@/provider/TasksContext";
 import { columnConfig } from "@/constants/tasks";
@@ -35,11 +35,15 @@ const TaskBoard = () => {
 
   const filteredTasks = getFilteredTasks(filters);
 
+  const handleFilterChange = useCallback((newFilters: any) => {
+    setFilters(newFilters);
+  }, []);
+
   return (
     <div className="container">
       <div className="container-filter">
         <h2 className="page-title-deco">To-Do List</h2>
-        <TaskFilter onFilterChange={(newFilters) => setFilters(newFilters)} />
+        <TaskFilter onFilterChange={handleFilterChange} />
       </div>
       <div className="board-container">
         {columnConfig.map((column) => (

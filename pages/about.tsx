@@ -61,7 +61,7 @@ export default function AboutPage() {
         La Context API de React se utiliza para gestionar el estado global de la
         aplicación. En lugar de pasar datos a través de múltiples niveles de
         componentes, la Context API permite compartir el estado entre cualquier
-        componente de la aplicación sin necesidad de "prop drilling".
+        componente de la aplicación sin necesidad de 'prop drilling'.
       </p>
 
       <h3 className={"tool"}>CSS</h3>
@@ -73,7 +73,7 @@ export default function AboutPage() {
         pequeñas.
       </p>
 
-      <h3 className={"tool"}>localStorage</h3>
+      <h3 className={"tool"}>Jest y Testing Library</h3>
       <p className={"toolDescription"}>
         Para persistir las tareas a través de sesiones, utilicé localStorage
         para almacenar y recuperar las tareas de la lista. Al hacer uso del hook
@@ -85,8 +85,23 @@ export default function AboutPage() {
         intactos.
       </p>
 
+      <h3 className={"tool"}>localStorage</h3>
+      <p className={"toolDescription"}>
+        Para garantizar el funcionamiento correcto de los componentes, utilicé
+        Jest junto con Testing Library. Jest permite ejecutar pruebas unitarias
+        y mockear funciones, lo que facilita verificar el comportamiento de los
+        componentes, como la interacción con el localStorage. Testing Library se
+        encargó de las pruebas de la interfaz de usuario, permitiendo
+        interactuar con los elementos como lo haría un usuario real. Usé queries
+        como getByText y getByRole para verificar que las tareas se añaden y
+        persisten correctamente en el localStorage, incluso después de recargar
+        la página. Gracias a estas herramientas, pude asegurarme de que la
+        aplicación funcione correctamente y mantenga una buena experiencia de
+        usuario.
+      </p>
+
       <Link href="/" className={"link"}>
-        <h2>Volver a la Todo List</h2>
+        <h2>Volver al listado</h2>
       </Link>
     </main>
   );
