@@ -24,6 +24,7 @@ const TaskFilter: React.FC<TaskFilterProps> = ({ onFilterChange }) => {
 
   return (
     <div className="container-filter">
+      {/* filter */}
       <div className="dropdown">
         <Button
           label="Filtros"
@@ -31,7 +32,7 @@ const TaskFilter: React.FC<TaskFilterProps> = ({ onFilterChange }) => {
         />
 
         <div className="dropdown-content">
-        <label className="dropdown-item">
+          <label className="dropdown-item">
             <input
               type="checkbox"
               name="all"
@@ -60,6 +61,8 @@ const TaskFilter: React.FC<TaskFilterProps> = ({ onFilterChange }) => {
           </label>
         </div>
       </div>
+
+      {/* Clear filter */}
       <Button
         onClick={() =>
           setFilters({

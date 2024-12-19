@@ -16,10 +16,7 @@ export const TasksProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const savedTasks = localStorage.getItem("tasks");
-    if (savedTasks) {
-      const parsedTasks = JSON.parse(savedTasks);
-      setTasks(JSON.parse(savedTasks));
-    }
+    if (savedTasks) setTasks(JSON.parse(savedTasks));
   }, []);
 
   useEffect(() => {

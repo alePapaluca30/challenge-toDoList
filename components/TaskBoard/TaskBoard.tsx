@@ -42,7 +42,8 @@ const TaskBoard = () => {
   return (
     <div className="container">
       <div className="container-filter">
-        <h2 className="page-title-deco">To-Do List</h2>
+        <h2 className="page-title-deco">Listado de tareas</h2>
+        {/* Filter */}
         <TaskFilter onFilterChange={handleFilterChange} />
       </div>
       <div className="board-container">

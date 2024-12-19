@@ -46,4 +46,4 @@ Para instalar y ejecutar este proyecto localmente, sigue estos pasos:
    ```bash
    npm run dev
    ```
-5. Una vez que el proyecto esté en ejecución, dirígete a http://localhost:3000/taskBoard para ver la aplicación en acción.
+5. Una vez que el proyecto esté en ejecución, dirígete a http://localhost:3000/ para ver la aplicación en acción.

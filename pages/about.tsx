@@ -100,6 +100,16 @@ export default function AboutPage() {
         usuario.
       </p>
 
+      <h3 className={"tool"}>Material Icons</h3>
+      <p className={"toolDescription"}>
+        En este proyecto, utilicé Material Icons para incorporar iconos modernos
+        y fácilmente reconocibles en la interfaz de usuario. Material Icons es
+        una librería de iconos desarrollada por Google, que se integra
+        fácilmente con React y otros frameworks. Proporciona una amplia variedad
+        de iconos listos para usar, lo que mejora la experiencia visual de la
+        aplicación.
+      </p>
+
       <Link href="/" className={"link"}>
         <h2>Volver al listado</h2>
       </Link>

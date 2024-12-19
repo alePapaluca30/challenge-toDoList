@@ -65,8 +65,8 @@
   gap: 20px;
 }
 
-@media (max-width: 768px) { /* Ajusta el tamaño para vistas móviles según tus necesidades */
+@media (max-width: 768px) {
   .board-container {
-    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-columns: 1fr;
   }
 }
