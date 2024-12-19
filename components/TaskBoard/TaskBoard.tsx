@@ -38,37 +38,27 @@ const TaskBoard = () => {
   return (
     <div className="container">
       <div className="container-filter">
-        {/* About */}
-        <Link href="/about" className="custom-link">
-          <div className="custom-link-title">
-            📖 🛠️ Explora sobre nuestras herramientas
-          </div>
-        </Link>
-        {/* Filter */}
-        <div className="container-filter">
-          <TaskFilter onFilterChange={(newFilters) => setFilters(newFilters)} />
-        </div>
+        <h2 className="page-title-deco">To-Do List</h2>
+        <TaskFilter onFilterChange={(newFilters) => setFilters(newFilters)} />
       </div>
       <div className="board-container">
         {columnConfig.map((column) => (
           <div key={column.state} className="board-card">
-            <h3 className="board-title-card">{column.title}</h3>
-
-            {/* Add Task */}
-            {column.state === "to-do" && (
-              <div className="container-delete">
-                <Button
-                  onClick={handleEnableNewTask}
-                  label=" + Nueva Tarea"
-                  classname="add-task"
-                />
-              </div>
-            )}
-
+            <div className="board-title-card" style={{ display: "flex" }}>
+              <h2>{column.title}</h2>
+              {column.state === "to-do" && (
+                <div>
+                  <Button
+                    onClick={handleEnableNewTask}
+                    icon={<span className="material-icons">add</span>}
+                    label="Nueva tarea"
+                  />
+                </div>
+              )}
+            </div>
             <div
               style={{ display: "flex", flexDirection: "column", rowGap: 20 }}
             >
-              {/* Card add task */}
               {newTaskEnabled && column.state === "to-do" && (
                 <TaskCard
                   title=""
@@ -81,8 +71,6 @@ const TaskBoard = () => {
                   onDeleteTask={() => deleteTask("")}
                 />
               )}
-
-              {/* Task list */}
               {filteredTasks
                 .filter((task) => task.state === column.state)
                 .map((task) => (
@@ -109,6 +97,19 @@ const TaskBoard = () => {
           </div>
         ))}
       </div>
+      <footer className="task-board-footer">
+        <span
+          className="material-icons"
+          style={{ color: "#eb8317", cursor: "default" }}
+        >
+          construction
+        </span>
+        <Link href="/about">
+          <span className="custom-link-title">
+            Explora sobre nuestras herramientas
+          </span>
+        </Link>
+      </footer>
     </div>
   );
 };

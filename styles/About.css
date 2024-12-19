@@ -3,7 +3,7 @@
   font-family: Arial, sans-serif;
   text-align: cneter;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 2rem auto;
 
   --color: #eb8317;
   color: var(--color);
@@ -32,15 +32,18 @@
 }
 
 .toolsTitle {
+  width: 100%;
   margin-top: 1rem;
   font-size: 1.5rem;
   color: #333;
+  text-align: start;
+  font-size: 2rem;
 }
 
 .toolsDescription {
   font-size: 1rem;
   color: #666;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 .tool {

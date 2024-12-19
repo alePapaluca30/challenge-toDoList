@@ -9,12 +9,12 @@ const Button = ({
   classname?: string;
   label?: string;
   icon?: ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
 }) => {
   return (
     <button className={classname} {...props}>
       {icon}
-      {label}
+      <p>{label}</p>
     </button>
   );
 };

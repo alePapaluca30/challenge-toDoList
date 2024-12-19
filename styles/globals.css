@@ -15,7 +15,6 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   color: black;
-  padding: 20px;
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -37,4 +36,25 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+h1,
+h2 {
+  color: #eb8317;
+  font-family: "Caveat", serif;
+  font-size: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4rem !important;
+}
+
+.page-title-deco::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #eb8317;
+  margin: 0px auto 0;
 }

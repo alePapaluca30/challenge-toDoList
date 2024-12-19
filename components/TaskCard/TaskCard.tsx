@@ -63,45 +63,46 @@ const TaskCard = ({
 
   return (
     <div className="task-card">
-      <div className="container-delete">
-        <Button
-          onClick={() => onDeleteTask()}
-          label="Eliminar"
-          classname="actions-delete"
+      <div style={{ position: "relative" }}>
+        <div className="container-delete">
+          <Button
+            onClick={() => onDeleteTask()}
+            icon={<span className="material-icons">delete_forever</span>}
+            classname={"custom-button delete-button"}
+          />
+        </div>
+      </div>
+      <div className="content-card">
+        <CustomField
+          field="title"
+          type="text"
+          label="Título"
+          value={localTask.title}
+          placeholder="Haz clic para agregar un título"
+          isEditing={editingField === "title"}
+          onEdit={() => handleEdit("title")}
+          editValue={localTask.title}
+          onValueChange={(newValue) => handleChange("title", newValue)}
+          onSave={handleSave}
+          onCancel={handleCancel}
+          onKeyDown={handleKeyDown}
+        />
+
+        <CustomField
+          field="description"
+          type="area"
+          label="Descripción"
+          value={localTask.description}
+          placeholder="Haz clic para agregar una descripción"
+          isEditing={editingField === "description"}
+          onEdit={() => handleEdit("description")}
+          editValue={localTask.description}
+          onValueChange={(newValue) => handleChange("description", newValue)}
+          onSave={handleSave}
+          onCancel={handleCancel}
+          onKeyDown={handleKeyDown}
         />
       </div>
-      <CustomField
-        field="title"
-        type="text"
-        label="Título"
-        value={localTask.title}
-        placeholder="Haz clic para agregar un título"
-        isEditing={editingField === "title"}
-        onEdit={() => handleEdit("title")}
-        editValue={localTask.title}
-        onValueChange={(newValue) => handleChange("title", newValue)}
-        onSave={handleSave}
-        onCancel={handleCancel}
-        onKeyDown={handleKeyDown}
-      />
-
-      <CustomField
-        field="description"
-        type="area"
-        label="Descripción"
-        value={localTask.description}
-        placeholder="Haz clic para agregar una descripción"
-        isEditing={editingField === "description"}
-        onEdit={() => handleEdit("description")}
-        editValue={localTask.description}
-        onValueChange={(newValue) => handleChange("description", newValue)}
-        onSave={handleSave}
-        onCancel={handleCancel}
-        onKeyDown={handleKeyDown}
-      />
-
-      {/* Btn change state */}
-
       <TaskActions state={state} onStateChange={onStateChange} />
     </div>
   );

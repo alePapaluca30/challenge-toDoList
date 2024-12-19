@@ -37,7 +37,7 @@ const CustomField: React.FC<EditableFieldProps> = ({
         />
       )}
 
-      <div className="actions-container">
+      <div className="actions-container-custom-field">
         <Button
           onClick={onSave}
           icon={<span className="material-icons">save</span>}
@@ -57,10 +57,10 @@ const CustomField: React.FC<EditableFieldProps> = ({
       className="separator"
       aria-label={`Editar ${field}`}
     >
-      <span className="input-label-value">
+      <p className="input-label-value">
         {label}:
         <p className="task-container-input-value"> {value ?? placeholder}</p>
-      </span>
+      </p>
     </div>
   );
 };

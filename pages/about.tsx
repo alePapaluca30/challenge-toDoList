@@ -85,8 +85,8 @@ export default function AboutPage() {
         intactos.
       </p>
 
-      <Link href="/taskBoard" className={"link"}>
-        Volver al listado
+      <Link href="/" className={"link"}>
+        <h2>Volver a la Todo List</h2>
       </Link>
     </main>
   );
